@@ -1,0 +1,11 @@
+/* line 25, ../sass/style.scss */
+body {
+  margin: 0;
+}
+
+/* line 34, ../sass/style.scss */
+button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
