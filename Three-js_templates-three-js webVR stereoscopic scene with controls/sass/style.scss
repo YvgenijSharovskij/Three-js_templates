@@ -1,0 +1,649 @@
+// ====================================================================================================================
+// imports  
+// ====================================================================================================================
+
+
+//@import "compass"; 				// http://compass-style.org/
+
+//@import 'partials/variables'; 	// font, colors, etc. 
+
+//@import 'partials/zindex'; 		// z-index
+
+//@import 'partials/mq'; 			// media queries mixin
+
+//@import 'partials/mixins'; 		// general mixins
+
+//@import 'partials/layout'; 		// susy grid and layout
+
+//@import 'partials/boilerplate'; // https://html5boilerplate.com/ 
+
+
+// ====================================================================================================================
+//  common
+// ====================================================================================================================
+
+body { 
+	margin: 0; 
+}
+
+//canvas { 
+//	width: 100%; 
+//	height: 100% 
+//}
+
+button { 
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+//
+//
+//
+//
+//
+//
+//
+//// ====================================================================================================================
+////  common
+//// ====================================================================================================================
+//
+///* transition elements on resize */
+//h1, 
+//h2, 
+//h3, 
+//.close-x:hover,
+//.project-open .open-left img,
+////.project-label,
+//.footer-links ul li a {
+//	transition: all 1s;
+//}
+// 
+///* JS cache fix for background img flicking in legacy IE */
+//
+//html {
+//	filter: expression(document.execCommand("BackgroundImageCache", false, true));
+//}
+//
+//html, body{
+//  height: 100%;
+//}
+//
+//*, *::after, *::before {
+//	@include box-sizing(border-box);
+//	content: '';
+//}
+//
+//body {
+//	font: {
+//		size: 100%;
+//		family: $main-font; 
+//	}
+//	color: $text-color; 
+//	background-color: $body-bg-color;
+//	@include font-smoothing;
+//
+//	&::after {
+//		// body overlay layer
+//		position: fixed;
+//		top: 0;
+//		left: 0;
+//		width: 100%;
+//		height: 100%;
+//		background: rgba($dw-bg-color, .6);
+//		visibility: hidden;
+//		opacity: 0;
+//		transition: opacity .3s 0s, visibility 0s .3s;
+//	}
+//
+//	&.overlay-layer::after {
+//		visibility: visible;
+//		opacity: 1;
+//		transition: opacity .3s 0s, visibility 0s 0s;
+//	}
+//}
+//
+//ul {
+//	list-style: none;
+//}
+//
+//img {
+//	max-width: 100%;
+//}
+//
+//h1 {
+//	@include font-size(38px);
+//	width: 100vw;
+//	max-width: $L;
+//}
+//
+//h2 {
+//	@include font-size(30px);
+//	font-weight: bold;
+//	color: #000;
+//	width: 100vw;
+//}
+//	
+//h3 {
+//	@include font-size(22px); 
+//	font-weight: bold;
+//	color: #000;
+//	width: 100vw;
+//}
+//
+//@include MQmax(M) {
+//	h1 {
+//		@include font-size(34px);
+//	}
+//	
+//	h2 {
+//		@include font-size(26px);
+//	}
+//		
+//	h3 {
+//		@include font-size(18px);
+//	}
+//}
+//
+//a {
+//	color: $color-2;
+//	text-decoration: none;
+//}
+//
+//
+///* replace text with img;
+//   if img is not loaded, text is displayed as fallback */
+//.img-replace {
+//	color: transparent;
+//	overflow: hidden;
+//	text-indent: 100%;
+//	white-space: nowrap;
+//}
+//
+//.no-scroll {
+//    overflow: hidden;
+//}
+//
+///*[aria-hidden="true"]  { display: none; }
+//[aria-hidden="false"] { display: block; }*/
+//
+//// ====================================================================================================================
+////  SVG icons
+//// ====================================================================================================================
+//
+//.icons {
+//	viewBox: 0 0 24 24;
+//	width: 24px;
+//  	height: 24px;
+//	// Adobe Illustrator:
+//	fill: $icon-color	;
+//	stroke: $icon-color	;
+//	stroke-width: 0.5;
+//	stroke-linecap: round;
+//	stroke-linejoin: round;
+//	stroke-miterlimit: 10;
+//}
+//
+//// ====================================================================================================================
+////  on scroll css translation when in-view
+//// ====================================================================================================================
+//
+//
+//.onScroll-animate {
+//	//overflow-y: hidden;
+//	opacity: 0;
+//	position: relative;
+//}
+//
+//.onScroll-animate.slide-up {
+//	opacity: 0;
+//	transition: all 1s ease-in-out;
+//	transform: translateZ(0);
+//	will-change: transform;
+//	transform: translateY($onScroll-slide);
+//	backface-visibility: hidden;
+//}
+//
+//.onScroll-animate.slide-up.in-view {
+//	opacity: 1;
+//	transform: translateZ(0);
+//	transform: translateY(0);
+//}
+//
+//// ====================================================================================================================
+////  main
+//// ====================================================================================================================
+//
+//.projects-container { 
+//	overflow-y: hidden !important;
+//	width: 90%;
+//	max-width: 1008px; 
+//	
+//	@include MQmin(M) {
+//		padding: 2% 0 0;
+//	}
+//	
+//	@include MQmax(M) {
+//		padding: 1% 0 0;
+//	}
+//}
+//
+//.close {
+//	position: absolute;
+//	display: block;
+//	height: 34px;
+//	width: 34px;
+//	margin-top: 2.5%;
+//	// top: 4%;
+//	right: 3em;
+//	background: url(../img/close-x.svg) no-repeat center center;
+//	
+//	@include MQmax(M) {
+//		//top: 2.5%;
+//		right: 2em;
+//	}
+//}
+//
+//header {
+//	position: relative;
+//	margin-top: 5%;
+//}
+//
+//.project-item {  
+//	position: relative;
+//	margin: 0 0 1em;
+//	backface-visibility: hidden;
+//	@include border-clip(.25em);
+//	box-shadow: 0 0 20px rgba(#000, .2);
+//
+//	> img {
+//		display: block;
+//		@include border-clip(.25em);
+//		width: 100%;
+//	}
+//
+//	// empty space after the project-item is open 
+//	&.project-empty::after {
+//		position: absolute;
+//		top: 0;
+//		left: 0;
+//		width: 100%;
+//		height: 100%;
+//		background-color: darken($body-bg-color, 20%);
+//		@include border-clip(.25em);
+//		z-index: z-map(project-empty);
+//	}
+//	
+////	// transition delay for-loop for .onScroll-animate .in-view:
+////	@for $i from 1 through $j {
+////		
+////		@if $delay == 0 or $j == 0 {
+////    		@warn "transition delay for-loop: $delay is `#{$delay}` and $j is `#{$j}`. ";
+////  		}
+////		
+////		$increase: $delay*($i - 1);		// fade-in
+////		$decrease: $delay*($j - $i);	// fade-out
+////	
+////		&:nth-of-type(#{$i}) {
+////			transition-delay: #{$increase}s;
+////	  	}
+////		
+////		&.onScroll-animate.slide-up.in-view:nth-of-type(#{$i}) {
+////    		transition-delay: #{$decrease}s;
+////  		}
+////	}
+//}
+//
+//.project-label {
+//	display: inline-block;
+//	position: absolute;
+//	cursor: pointer;
+//	height: 40%;
+//	line-height: 1.8em;
+//	padding: 10px;
+//	width: 100%;
+//	bottom: 0;
+//	left: 0;
+//	background: rgba(#000, .1);
+//	text-align: left;
+//	@include overflow-elipsis;	// hide overflow with an elipsis
+//	@include border-clip($radius: .25em);
+//	color: $color-4;
+//	opacity: .8;
+//	backface-visibility: hidden;
+//	transition: opacity .3s, background-color .3s,  height .3s;
+//	
+//	&:hover {
+//			overflow: visible;	// show overflow on hover
+//			white-space: normal;
+//			background: rgba(#000, .2);
+//			opacity: 1;
+//			height: 70%;
+//			// border-style: outset;
+//	}
+//	
+//	.touch & {
+//		opacity: 1;
+//		background: rgba(#000, .2);
+//	}
+//	
+//	&.is-hidden {
+//		visibility: hidden;
+//		//opacity: 0;
+//		height: 0%;
+//	}
+//}
+//
+//.project-open {
+//	display: inline-block;
+//	position: fixed;
+//	width: 57em;
+//	@include border-clip(.25em);
+//	padding: .5%;
+//	max-width: $L;
+//	visibility: hidden;
+//	transform: translateZ(0);
+//	backface-visibility: hidden;
+//	will-change: left, top, width;
+//	z-index: z-map(project-open);
+//	
+//	&.is-visible {
+//		visibility: visible;
+//		aria-hidden: false;
+//	}
+//	
+//	&.open-animate {	// project open surface, animated for width with velocity 	
+//		@include border-clip(.25em);
+//		background-color: $color-5; 
+//		box-shadow: 0 0 40px rgba(#000, .5);
+//		transition: box-shadow .3s;
+//		transform: translateZ(0);
+//		backface-visibility: hidden;
+//	}
+//	
+//	.open-left {
+//		position: relative;
+//		@include border-clip(.25em);
+//		float: left;
+//		@include clearfix;
+//		
+//		img {
+//			margin-right: .5em;
+//			display: block;
+//			max-width: $S;
+//			@include border-clip(.25em);
+//			
+//			@include MQmax(M) {
+//				margin-right: .25em;
+//				width: 70%;
+//			}
+//			
+//			@include MQmin(M) {
+//				// margin-right: 2em;
+//				width: 90%;
+//			}
+//			
+//			@include MQmin(L) {
+//				width: 100%;
+//			}
+//		}
+//	}
+//}
+//
+//.project-info {
+//	position: absolute;
+//	padding: 0 3% 3% 3%;
+//	visibility: hidden;
+//	opacity: 0;
+//	backface-visibility: hidden;
+//	transition: opacity .3s, visibility 0s;
+//	
+//	.project-title {
+//		@include font-size(22px); 
+//		font-weight: bold;
+//		color: #000;
+//		line-height: 2.2;
+//	}
+//	
+//	p.project-description {
+//		line-height: 1.6;
+//		margin: 1% 0;
+//		color: lighten($color-1, 20%);
+//	}
+//
+//	a.button {
+//		display: inline-block;
+//		text-decoration: none;
+//		background-color: $code-css-selector;
+//		@include border-clip(.75em);
+//		color: white;
+//		padding: 3%;
+//		margin-right: 5%;
+//	  
+//		background: gradient(top, $code-css-selector 0%, $code-html 100%);
+//		margin-top: 30px;
+//		box-shadow: 1px 1px 4px hsla(0, 0%, 25%, 0.4);
+//		text-shadow: 0px 1px $text-color;
+//		border: 1px solid $color-8;
+//	  
+//		&:hover {
+//			color: $color-8;
+//			background-color: lighten($code-css-selector, 5%);
+//			text-shadow: 1px 1px $color-8;
+//			box-shadow: 1px 2px 6px hsla(0, 0%, 25%, 0.8);
+//		}
+//		
+//		&:active {
+//			box-shadow: inset 0 0 0 1px $color-6, inset 0 5px 25px $color-6;
+//		}
+//		
+//	//	// transition delay for-loop for buttons translated with .onScroll-animate:
+//	//	@for $i from 1 through $j {
+//	//		
+//	//		@if $delay == 0 or $j == 0 {
+//	//    		@warn "transition delay for-loop: $delay is `#{$delay}` and $j is `#{$j}`. ";
+//	//  		}
+//	//		
+//	//		$increase: $delay*($i - 1);		// fade-in
+//	//		$decrease: $delay*($j - $i);	// fade-out
+//	//	
+//	//		&:nth-of-type(#{$i}) {
+//	//			transition-delay: #{$increase}s;
+//	//	  	}
+//	//		
+//	//		&.onScroll-animate.slide-up.in-view:nth-of-type(#{$i}) {
+//	//    		transition-delay: #{$decrease}s;
+//	//  		}
+//	//	}
+//	
+//		@include MQmax(M) {
+//			margin: 4%;
+//			@include clearfix;
+//		}
+//	}
+//		
+//	@include MQmax(M) {
+//		padding: 4% .25% .25% .25%;
+//    	clear: both;
+//    	content: "";
+//    	display: block;
+//	}
+//
+//	.add-info & {	// added on callback with velocity()
+//		position: relative;
+//		visibility: visible;
+//		transform: translateZ(0);
+//		backface-visibility: hidden;
+//		opacity: 1;
+//
+//		.project-title {
+//			animation: info-slide-right .25s;
+//		}
+//
+//		.project-description {
+//			animation: info-slide-right .5s;
+//		}
+//		
+//		a.button  {
+//			animation: info-slide-right 1s;
+//		}
+//	}
+//}
+//
+//@include keyframes(info-slide-right) {
+//	0% {
+//		transition: all 1s ease-in;
+//		transform: translateZ(0);
+//		will-change: transform;
+//		transform: translateX(-50px);
+//	} 100% {
+//		transform: translateX(0);
+//	}
+//}
+//
+//.close-x {
+//	display: inline-block;
+//	position: absolute;
+//	top: 0px;
+//	right: 5px;
+//	font-size: 44px;
+//	color: black;
+//	padding: 5px;
+//	margin: 6px;
+//	line-height: .7em;
+//	text-align: center;
+//	@include border-clip(.25em);
+//	transform: scale(0);
+//	visibility: hidden;
+//	transition: transform .55s 0s, visibility 0s .55s;
+//	
+//	.add-info & {
+//		visibility: visible;
+//		transform: scale(1);
+//		transition: transform .55s 0s, visibility 0s 0s;
+//	}
+//	
+//	&:hover {
+//		//transform: scale(1.1, 1.1);
+//		background: darken($color-6, 2%);
+//		box-shadow: 1px 1px 5px hsla(0, 0%, 25%, 0.8);
+//		color: white;
+//		//border: thin solid darken($color-6, 30%);
+//	}
+//	
+////	@include MQmax(M) {
+////		padding: .25%;
+////	}
+//}
+//
+//
+//// ====================================================================================================================
+////  footer 
+//// ====================================================================================================================
+//
+//.footer-container { 
+//  	background: $footer-bg;
+//  	color: $color-5;
+//  	height: $footer-height; 
+//	width: 100%;
+// 
+//	.footer-links{
+//		ul li {
+//			display: inline-block;
+//			padding-right: 10px;
+//			padding-bottom: 6px;
+//				
+//			a {
+//				color:  $color-4;
+//  				opacity: .6;
+//  
+//  				&:hover {
+//					opacity: 1;
+//				}
+//			}
+//		}
+//	}
+//}
+//
+//
+//// ====================================================================================================================
+////  browser upgrade message,
+////  default CSS from http://www.browser-update.org/#install
+//// ====================================================================================================================
+//
+///*
+//.buorg {
+//    position:fixed;
+//    width:100%;
+//    top:0px;
+//    left:0px;
+//    border-bottom:1px solid #A29330;
+//    background:#FDF2AB no-repeat 1em 0.55em url(http://browser-update.org/img/dialog-warning.gif);
+//    text-align:left;
+//    cursor:pointer;
+//    font-family: Arial,Helvetica,sans-serif; color:#000;
+//    font-size: 12px;
+//	z-index: 999;
+//}
+//.buorg div {
+//    padding:5px 36px 5px 40px;
+//}
+//.buorg a {
+//    color:#E25600;
+//}
+//#buorgclose {
+//    position: absolute;
+//    right: .5em;
+//    top:.2em;
+//    height: 20px;
+//    width: 12px;
+//    font-weight: bold;
+//    font-size:14px;
+//    padding:0;
+//}
+//*/
